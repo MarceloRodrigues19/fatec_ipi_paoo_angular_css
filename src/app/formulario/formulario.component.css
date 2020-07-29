@@ -1,0 +1,36 @@
+.principal {
+    margin: 10px;
+    padding: 50px;
+}
+
+.container {
+    width: 1280px;
+	text-align: left;
+    margin: auto;  
+}
+
+.rodape {
+    border-top: double;
+    border-bottom: double;
+    padding: 25px;
+    margin-top: 10px;
+    width: 300px;
+    display: inline;
+}
+
+.cartao {
+    background-color: lightsteelblue;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    display: inline;
+}
+
+.inscricao {
+    margin: 10px;
+    padding: 70px;
+    border: double;
+    border-radius: 15px;
+    width: 300px;
+    margin-left: 500px;
+}

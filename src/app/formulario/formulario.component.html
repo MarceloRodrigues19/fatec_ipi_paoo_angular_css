@@ -1,0 +1,52 @@
+<div class="principal">
+    <div class="container">
+        <header class="titulo" [ngStyle]="obterEstiloTitulo()">
+            Inscrição Vestibular Fatec
+        </header>
+        <form #inscricaoForm="ngForm" (ngSubmit)="salvar(inscricaoForm)">
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="nomeInput">Nome</label>                
+                    <input id="nomeInput" type="text" placeholder="Nome" class="form-control p-4" name="nome" [(ngModel)]="inscricao.nome">
+                </div>
+            </div>
+            <div class="row">      
+
+                <div class="form-group col-md-6">                
+                    <label for="idadeInput">Idade</label>                
+                    <input id="idadeInput" type="text" placeholder="Idade" class="form-control p-4" name="idade" [(ngModel)]="inscricao.idade">            
+                </div>
+
+                <div class="form-group col-md-6">                
+                    <label for="cursoInput">Curso</label>                
+                    <select name="" id="cursoInput" class="form-control" name="curso" [(ngModel)]="inscricao.curso">                    
+                        <option value="">Selecione</option>                    
+                        <option *ngFor="let curso of cursos">{{curso}}</option>                                                
+                    </select>            
+                </div>
+            </div> 
+            <div class="row">            
+                <div class="col-12">               
+                    <button [ngStyle]="obterEstiloBotao()" type="submit" class="btn btn-primary btn-block" (click)="gerarNumInscricao()">Enviar</button>            
+                </div>
+            </div>    
+        </form>
+        <div [ngClass]="obterClassesNumInscricao()">
+            Seu número de Inscrição é: {{numInscricao}}
+        </div>
+        <footer [ngClass]="obterClassesRodape()">
+            Fatec. 2020. Centro Paula Souza.
+        </footer>  
+    </div>  
+</div>
+<div class="card p-0 m-3" [ngClass]="obterClassesCartao()">
+   <div class="card-header">
+     Inscrição
+   </div>
+   <div class="card-body">
+     <p class="card-text">
+       <p>Nome: {{inscricao.nome}}</p>
+       <p>Idade: {{inscricao.idade}}</p>
+       <p>Curso: {{inscricao.curso}}</p>
+   </div>
+ </div>
